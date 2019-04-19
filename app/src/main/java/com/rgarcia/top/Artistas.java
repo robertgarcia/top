@@ -1,17 +1,32 @@
 package com.rgarcia.top;
 
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
+import com.rgarcia.top.db.TopDB;
+
 import java.util.Objects;
 
+@Table(database = TopDB.class)
 public class Artistas {
     public static final String ORDEN = "orden";
+    @PrimaryKey(autoincrement = true)
     private long id;
+    @Column
     private String nombre;
+    @Column
     private String apellidos;
+    @Column
     private long fechaNacimiento;
+    @Column
     private String lugarNacimientos;
+    @Column
     private short estatura;
+    @Column
     private String notas;
+    @Column
     private int orden;
+    @Column
     private String fotoUrl;
 
     public Artistas(){}
