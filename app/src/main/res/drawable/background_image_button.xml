@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="@dimen/imageView_inset"
+    android:insetLeft="@dimen/imageView_inset"
+    android:insetRight="@dimen/imageView_inset"
+    android:insetBottom="@dimen/imageView_inset">
+    <shape>
+        <solid android:color="@color/white_t"/>
+        <gradient
+            android:gradientRadius="100%p"
+            android:startColor="@color/white_t"
+            android:endColor="@color/white_t"
+            android:type="radial"/>
+        <corners android:radius="@dimen/imageView_radius"/>
+    </shape>
+</inset>
