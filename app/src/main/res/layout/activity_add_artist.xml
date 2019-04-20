@@ -64,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/artist_hint_apellidos"
                 android:inputType="textPersonName|textCapWords"
-                android:maxLength="@integer/nombre_maxLenght"/>
+                android:maxLength="@integer/nombre_maxLenght"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/etEstatura"/>
         </android.support.design.widget.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"

@@ -66,9 +66,21 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
         }
     }
 
+    public void setList(List<Artistas> list){
+        this.artistas = list;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return this.artistas.size();
+    }
+
+    public void remove(Artistas artista) {
+        if(artistas.contains(artista)){
+            artistas.remove(artista);
+            notifyDataSetChanged();
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

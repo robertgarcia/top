@@ -1,15 +1,20 @@
 package com.rgarcia.top;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.rgarcia.top.db.TopDB;
 
 import java.util.Objects;
 
 @Table(database = TopDB.class)
-public class Artistas {
+public class Artistas extends BaseModel {
     public static final String ORDEN = "orden";
+    public static final String ID = "id";
     @PrimaryKey(autoincrement = true)
     private long id;
     @Column
@@ -33,6 +38,17 @@ public class Artistas {
 
     public Artistas(long id, String nombre, String apellidos, long fechaNacimiento, String lugarNacimientos, short estatura, String notas, int orden, String fotoUrl) {
         this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.lugarNacimientos = lugarNacimientos;
+        this.estatura = estatura;
+        this.notas = notas;
+        this.orden = orden;
+        this.fotoUrl = fotoUrl;
+    }
+
+    public Artistas(String nombre, String apellidos, long fechaNacimiento, String lugarNacimientos, short estatura, String notas, int orden, String fotoUrl) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;
@@ -127,6 +143,7 @@ public class Artistas {
         return id == artistas.id;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
         return Objects.hash(id);
